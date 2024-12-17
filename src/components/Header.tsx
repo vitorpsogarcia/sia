@@ -72,30 +72,15 @@ export function Header() {
           <h1 className="text-xl h-full md:text-2xl">Práticas de Extensão</h1>
         </div>
         <div className="hidden flex-row items-center font-medium pb-1 text-sm md:flex">
+          {menuItems.map((item, index) => (
             <a
-                className="p-2 px-4 rounded-sm hover:bg-white hover:text-black transition-colors"
-                href="#sobre"
+              key={index}
+              className="p-2 px-4 rounded-sm hover:bg-white hover:text-black transition-colors"
+              href={item.href}
             >
-                O que são?
+              {item.title}
             </a>
-            <a
-                className="p-2 px-4 rounded-sm hover:bg-white hover:text-black transition-colors"
-                href="#projetos"
-            >
-                Projeto
-            </a>
-            <a
-                className="p-2 px-4 rounded-sm hover:bg-white hover:text-black transition-colors"
-                href="#sobre-campus"
-            >
-                Sobre o Campus
-            </a>
-            <a
-                className="p-2 px-4 rounded-sm hover:bg-white hover:text-black transition-colors"
-                href="#contato"
-            >
-                Contato
-            </a>
+          ))}
         </div>
       </div>
     </header>
