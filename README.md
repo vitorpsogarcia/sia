@@ -4,6 +4,8 @@
 
 Website desenvolvido para apresentar os projetos de extensão do Instituto Federal do Paraná - Campus Paranavaí. A plataforma disponibiliza informações sobre as atividades de extensão, seus objetivos e impactos na comunidade, além de dados importantes sobre o campus e contatos.
 
+Site: <https://sia-90hu9gs42-vitorpsogarcias-projects.vercel.app>
+
 ## 🚀 Tecnologias Utilizadas
 
 - [React](https://react.dev/) - Biblioteca JavaScript para construção de interfaces

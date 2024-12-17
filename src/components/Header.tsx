@@ -5,9 +5,21 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export function Header() {
+  const [openMenu, setOpenMenu] = useState<boolean>(false)
+
+  const handleScroll = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      setOpenMenu(false);
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }, 500);
+    }
+  };
 
   const menuItems = useMemo(() => {
     return [
@@ -38,14 +50,18 @@ export function Header() {
     <header className="flex px-3 w-full bg-brand font-bold text-white py-2 gap-3 pb-0 justify-center">
       <div className="w-full md:w-5/6">
         <div className="flex flex-row gap-3 items-center md:pb-6 py-2 pb-4">
-          <Sheet>
-            <SheetTrigger><MenuIcon /></SheetTrigger>
-            <SheetContent side="left" className="flex flex-col justify-between bg-hover-brand text-white border-gray-400">
+          <Sheet open={openMenu} onOpenChange={() => setOpenMenu(!openMenu)}>
+            <SheetTrigger className="md:hidden"><MenuIcon /></SheetTrigger>
+            <SheetContent side="left" className="flex flex-col justify-between bg-hover-brand text-white border-gray-400" aria-describedby="Menu de Navegação">
               <div className="flex flex-col gap-6 pt-10">
                 {menuItems.map((item, index) => (
-                  <span className="flex flex-row items-center gap-4 p-2 border-white/20 rounded-xl border-2 transition-colors hover:bg-white hover:text-black" key={index}>
+                  <span
+                    onClick={(e) => handleScroll(e, item.href)}
+                    key={index}
+                    className="flex flex-row items-center gap-4 p-2 border-white/20 rounded-xl border-2 transition-colors cursor-pointer hover:bg-white hover:text-black"
+                  >
                     {item.icon}
-                    <a key={index} href={item.href} className="block p-2 transition-colors">{item.title}</a>
+                    {item.title}
                   </span>
                 ))}
               </div>

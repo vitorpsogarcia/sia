@@ -9,8 +9,8 @@ export function SobrePraticas() {
           Educação, Ciência e Tecnologia do Paraná (IFPR) e a sociedade.
 
           <span className="font-semibold pt-4">Objetivos:</span>
-
-          <ul className="list-disc pl-2 md:pl-6 space-y-2 grid md:grid-cols-2 gap-x-20">
+        </p>
+        <ul className="list-disc pl-2 md:pl-6 space-y-2 grid md:grid-cols-2 gap-x-20">
             <li>Integrar o ensino e a pesquisa aprendidos dentro das instituições com as necessidades da comunidade externa presente;</li>
             <li>Instituir-se como um espaço para troca de conhecimentos e experiências entre diferentes sujeitos;</li>
             <li>Tornar o estudante protagonista, colaborando em sua formação de forma técnica e cidadã;</li>
@@ -18,7 +18,6 @@ export function SobrePraticas() {
             <li>Apoiar o desenvolvimento regional de forma sustentável;</li>
             <li>Oportunizar o acesso á educação, por meio de políticas e mecanismos de inclusão.</li>
           </ul>
-        </p>
     </section>
   )
 }
